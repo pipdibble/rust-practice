@@ -1,11 +1,11 @@
 fn process(slice: &mut [i32]) {
-    let length = slice.len();
-    let (slice_1, slice_2) = slice.split_at_mut(length/2);
-    slice_1[0] = slice_1[0] * 2;
-    println!("slice_1: {:?}", slice_1);
-    println!("slice_2: {:?}", slice_2);
-    
-
+    let (slice1, slice2) = slice.split_at_mut(slice.len()/2);
+    for elem in slice1 {
+        *elem *= 2;
+    }
+    for elem in slice2 {
+        *elem += 10;
+    }
 }
 
 fn main() {
